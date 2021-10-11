@@ -1,28 +1,108 @@
-//setup
 @charset 'utf-8';
 
-//bootstrap stuff
-@import 'demo/base/variables';
-@import 'demo/base/mixins';
-@import 'demo/base/normalize';
-@import 'demo/base/scaffolding';
-@import 'demo/base/type';
+body {
+  align-items: center;
+  background: linear-gradient(#152847, #01132e);
+  border: 1px solid #2d5a71;
+  box-sizing: border-box;
+  color: #f9f8df;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.05rem;
+  justify-content: center;
+  margin: 2rem;
 
-@import 'demo/base/colors';
-@import 'demo/base/typography';
-@import 'demo/base/grid';
-@import 'demo/base/placeholders';
+  @media screen and (min-width: 75rem) {
+    height: 100vh;
+  }
+}
 
-@import 'demo/shared/header-primary';
-@import 'demo/shared/main-content';
-@import 'demo/shared/footer';
+.content {
+  align-items: stretch;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto auto 4rem;
+  width: 100%;
 
-@import 'demo/products/products';
-@import 'demo/products/product';
-@import 'demo/products/product-detail';
+  @media screen and (min-width: 54rem) {
+    width: 50rem;
+  }
 
-@import 'demo/news/news';
-@import 'demo/news/news-detail';
+  @media screen and (min-width: 75rem) {
+    background-color: #152847;
+    box-shadow: 0 4px 36px rgba(0, 0, 0, 0.25);
+    flex-direction: row;
+    margin: auto auto;
+    width: 60rem;
+  }
 
-@import 'demo/homepage/hero';
-@import 'demo/homepage/story';
+  @media screen and (min-width: 90rem) {
+    width: 80rem;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  text-align: center;
+
+  @media screen and (min-width: 75rem) {
+    width: 30%;
+  }
+}
+
+.image {
+  background-size: cover;
+  height: 24rem;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: 54rem) {
+    height: 30rem;
+  }
+
+  @media screen and (min-width: 75rem) {
+    height: auto;
+    width: 70%;
+  }
+}
+
+.logo {
+  margin-bottom: 2rem;
+}
+
+.banner__container {
+  position: absolute;
+  right: -1rem;
+  top: 0.75rem;
+
+  @media screen and (max-width: 20rem) {
+    right: 1rem;
+  }
+}
+
+.banner {
+  background-color: #f9f8df;
+  box-shadow: 0 4px 36px rgba(0, 0, 0, 0.25);
+  color: #152847;
+  padding: 0.75rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.banner__end {
+  box-shadow: 0 4px 36px rgba(0, 0, 0, 0.25);
+  left: -3rem;
+  position: absolute;
+  top: 1rem;
+  z-index: 0;
+}
+
+a {
+  color: #f9f8df;
+}

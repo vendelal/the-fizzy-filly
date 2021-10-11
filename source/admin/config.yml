@@ -8,37 +8,6 @@ public_folder: /images/uploads
 
 collections:
   #yaml middleman data example
-  - name: product
-    label: Product
-    format: yml
-    extension: yml
-    folder: data/products/
-    create: true
-    slug: '{{title}}'
-    fields:
-      - {label: Title, name: title, widget: string, required: true}
-      - {label: Publish Date, name: date, widget: datetime}
-      - {label: Image, name: image, widget: image, required: true}
-
-      - {label: Weight, name: weight, widget: number}
-      - {label: Price, name: price, widget: number}
-      - {label: Body, name: body, widget: markdown}
-
-#markdown middleman blog example
-  - name: blog
-    label: Blog
-    folder: source/posts/
-    extension: .html.md
-    format: frontmatter
-    create: true
-    slug: '{{title}}'
-    fields:
-      - {label: Title, name: title, widget: string, required: true}
-      - {label: Publish Date, name: date, widget: datetime}
-      - {label: Description, name: description, widget: string}
-      - {label: Image, name: image, widget: image}
-      - {label: Body, name: body, widget: markdown}
-
   - name: pages
     label: Pages
     files:
@@ -50,11 +19,17 @@ collections:
             name: hero
             widget: object
             fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Image, name: image, widget: image}
+              - { label: Title, name: title, widget: string }
+              - { label: Image, name: image, widget: image }
           - label: Story
             name: story
             widget: markdown
+          - label: Logo
+            name: logo
+            widget: image
+          - label: "Website coming soon"
+            name: website_coming_soon
+            widget: image
 
   - name: settings
     label: Settings
@@ -67,20 +42,5 @@ collections:
             name: nav_items
             widget: list
             fields:
-              - {label: Label, name: label, widget: string}
-              - {label: Path, name: path, widget: string}
-      - file: data/settings/units.yml
-        label: Units
-        name: units
-        fields:
-          - label: Currency
-            name: currency
-            widget: select
-            options: ['€', '$', '£']
-            default: '€'
-
-          - label: Weight
-            name: weight
-            widget: select
-            options: ['kg', ' st', ' lb']
-            default: 'kg'
+              - { label: Label, name: label, widget: string }
+              - { label: Path, name: path, widget: string }

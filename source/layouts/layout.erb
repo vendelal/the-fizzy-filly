@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= partial "layouts/meta" %>
+    <%= stylesheet_link_tag 'all' %>
+    <title><%= current_page.data.title || "Lanca Sales" %></title>
+    <%= javascript_include_tag "https://identity.netlify.com/v1/netlify-identity-widget.js" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body class="body">
+    <main>
+      <%= yield %>
+    </main>
+    <%= javascript_include_tag "main" %>
+  </body>
+</html>

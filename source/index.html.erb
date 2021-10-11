@@ -1,0 +1,18 @@
+---
+title: The Fizzy Filly
+---
+
+<div class="content">
+    <div class="text">
+        <%= image_tag data.pages.home.logo, class: "logo" %>
+        <%= image_tag data.pages.home.website_coming_soon %>
+        <p>Email us for inquiries</p>
+        <a href="mailto:thefizzyfillybar@gmail.com">thefizzyfillybar@gmail.com</a>
+    </div>
+    <div class="image" style="background-image: url(<%= data.pages.home.hero.image %>);">
+        <div class="banner__container">
+            <%= image_tag "uploads/banner-end.svg", class: "banner__end" %>
+            <div class="banner"><%= data.pages.home.hero.title %></div>
+        </div>
+    </div>
+</div>

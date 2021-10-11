@@ -4,12 +4,6 @@ require "uglifier"
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
-# Use '#id' and '.classname' as div shortcuts in slim
-# http://slim-lang.com/
-Slim::Engine.set_options shortcut: {
-  '#' => { tag: 'div', attr: 'id' }, '.' => { tag: 'div', attr: 'class' }
-}
-
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
@@ -25,26 +19,11 @@ page '/*.txt', layout: false
 page "/partials/*", layout: false
 page "/admin/*", layout: false
 
-activate :blog do |blog|
-  blog.permalink = "news/{year}/{title}.html"
-  blog.sources = "posts/{title}.html"
-  blog.layout = "news-detail"
-end
-
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
-
-# proxy product.yml files to product.html 
-data.products.each do |_filename, product|
-  # product is an array: [filename, {data}]
-  proxy "/product/#{product[:title].parameterize}/index.html", "product.html", 
-  locals: {product: product}, 
-  layout: 'product-detail',
-  ignore: true
-end
 
 # Helpers
 # Methods defined in the helpers block are available in templates
